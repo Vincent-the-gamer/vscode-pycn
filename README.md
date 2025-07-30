@@ -5,9 +5,16 @@
 > [!IMPORTANT]
 > This extension is under construction.
 
-# Description
+## Description
 
 This is a VSCode syntax highlighting (and maybe with snippets later.) extension for [Pycn](https://github.com/Vincent-the-gamer/pycn) language.
+
+## Preview
+
+> [!NOTE]
+> This is a pre-alpha preview, it is not completely highlighted.
+
+![preview](.github/preview.png)
 
 ## License
 

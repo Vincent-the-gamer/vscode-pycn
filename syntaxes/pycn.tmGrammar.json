@@ -2132,14 +2132,14 @@
       ]
     },
     "item-index": {
-      "begin": "［|(\\[)",
+      "begin": "［|(\\[)|【",
       "beginCaptures": {
         "2": {
           "name": "punctuation.definition.arguments.begin.pycn"
         }
       },
       "contentName": "meta.item-access.arguments.pycn",
-      "end": "(?=］|])",
+      "end": "(?=］|]|】)",
       "patterns": [
         {
           "match": "：|:",
@@ -2311,13 +2311,13 @@
       ]
     },
     "list": {
-      "begin": "［|\\[",
+      "begin": "［|\\[|【",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.list.begin.pycn"
         }
       },
-      "end": "］|]",
+      "end": "］|]|】",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.list.end.pycn"
@@ -3687,6 +3687,9 @@
     "string": {
       "patterns": [
         {
+          "include": "#string-cjk-quoted"
+        },
+        {
           "include": "#string-quoted-multi-line"
         },
         {
@@ -4166,6 +4169,50 @@
         },
         {
           "include": "#string-brace-formatting"
+        }
+      ]
+    },
+    "string-cjk-quoted": {
+      "patterns": [
+        {
+          "begin": "\\u201c",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.pycn"
+            }
+          },
+          "end": "\\u201d",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.pycn"
+            }
+          },
+          "name": "string.quoted.double.pycn",
+          "patterns": [
+            {
+              "include": "#string-entity"
+            }
+          ]
+        },
+        {
+          "begin": "\\u2018",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.pycn"
+            }
+          },
+          "end": "\\u2019",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.pycn"
+            }
+          },
+          "name": "string.quoted.single.pycn",
+          "patterns": [
+            {
+              "include": "#string-entity"
+            }
+          ]
         }
       ]
     }
