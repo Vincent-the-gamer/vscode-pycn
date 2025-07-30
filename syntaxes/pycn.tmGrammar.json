@@ -11,7 +11,7 @@
   ],
   "repository": {
     "annotated-parameter": {
-      "begin": "\\b([_[:alpha:]]\\w*)\\s*(:)",
+      "begin": "\\b([_[:alpha:]]\\w*)\\s*(：|:)",
       "beginCaptures": {
         "1": {
           "name": "variable.parameter.function.language.pycn"
@@ -20,9 +20,9 @@
           "name": "punctuation.separator.annotation.pycn"
         }
       },
-      "end": "(,)|(?=\\))",
+      "end": "，|(,)|(?=）|\\))",
       "endCaptures": {
-        "1": {
+        "2": {
           "name": "punctuation.separator.parameters.pycn"
         }
       },
@@ -31,13 +31,13 @@
           "include": "#expression"
         },
         {
-          "match": "=(?!=)",
+          "match": "赋值为|＝|=(?!=)",
           "name": "keyword.operator.assignment.pycn"
         }
       ]
     },
     "assignment-operator": {
-      "match": "<<=|>>=|//=|\\*\\*=|\\+=|-=|/=|@=|\\*=|%=|~=|\\^=|&=|\\|=|=(?!=)",
+      "match": "《《＝|<<=|》》＝|>>=|／／＝|//=|＊＊＝|\\*\\*=|＋＝|\\+=|－＝|-=|／＝|/=|＠＝|@=|＊＝|\\*=|％＝|%=|～＝|~=|＾＝|\\^=|＆＝|&=|｜＝|\\|=|赋值为|＝|=(?!=)",
       "name": "keyword.operator.assignment.pycn"
     },
     "backticks": {
@@ -76,7 +76,7 @@
     "builtin-functions": {
       "patterns": [
         {
-          "match": "(?<!\\.)\\b(__import__|绝对值|aiter|全部为真|有一个为真|anext|ascii|bin|breakpoint|callable|chr|compile|copyright|credits|delattr|dir|divmod|索引迭代|解析|执行|推出|filter|format|getattr|globals|hasattr|hash|help|hex|id|输入|isinstance|issubclass|iter|len|license|locals|map|max|memoryview|min|next|oct|open|ord|pow|print|quit|range|reload|repr|reversed|round|setattr|sorted|sum|vars|zip)\\b",
+          "match": "(?<!\\.)\\b(__import__|abs|绝对值|aiter|all|全部为真|any|有一个为真|anext|ascii|bin|breakpoint|callable|chr|compile|copyright|credits|delattr|dir|divmod|enumerate|索引迭代|eval|解析|exec|执行|exit|退出|filter|过滤|format|getattr|globals|全局变量|hasattr|hash|help|hex|id|编号|input|输入|isinstance|实例判断|issubclass|子类判断|iter|len|长度|license|locals|本地变量|map|映射|max|最大值|memoryview|min|最小值|next|oct|open|打开|ord|pow|print|打印|quit|退出|range|范围|reload|repr|reversed|round|setattr|sorted|sum|求和|vars|zip|拉链)\\b",
           "name": "support.function.builtin.pycn"
         },
         {
@@ -96,7 +96,7 @@
       ]
     },
     "builtin-types": {
-      "match": "(?<!\\.)\\b(bool|bytearray|bytes|classmethod|complex|dict|float|frozenset|int|list|object|property|set|slice|staticmethod|str|tuple|type|super)\\b",
+      "match": "(?<!\\.)\\b(bool|bytearray|bytes|classmethod|类方法|complex|dict|字典|float|小数|frozenset|int|整数|list|列表|object|对象|property|属性|set|集合|slice|切片|staticmethod|静态方法|str|字符串|tuple|元组|type|类型|super|父类)\\b",
       "name": "support.type.pycn"
     },
     "call-wrapper-inheritance": {
@@ -120,7 +120,7 @@
     "class-declaration": {
       "patterns": [
         {
-          "begin": "\\s*(class)\\s+(?=[_[:alpha:]]\\w*\\s*([(:]))",
+          "begin": "\\s*(class|类)\\s+(?=[_[:alpha:]]\\w*\\s*([(:]))",
           "beginCaptures": {
             "1": {
               "name": "storage.type.class.pycn"
@@ -145,15 +145,15 @@
       ]
     },
     "class-inheritance": {
-      "begin": "(\\()",
+      "begin": "（|(\\()",
       "beginCaptures": {
-        "1": {
+        "2": {
           "name": "punctuation.definition.inheritance.begin.pycn"
         }
       },
-      "end": "(\\))",
+      "end": "）|(\\))",
       "endCaptures": {
-        "1": {
+        "2": {
           "name": "punctuation.definition.inheritance.end.pycn"
         }
       },
@@ -164,7 +164,7 @@
           "name": "keyword.operator.unpacking.arguments.pycn"
         },
         {
-          "match": ",",
+          "match": "，|,",
           "name": "punctuation.separator.inheritance.pycn"
         },
         {
@@ -313,13 +313,13 @@
       ]
     },
     "curly-braces": {
-      "begin": "\\{",
+      "begin": "｛|\\{",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.dict.begin.pycn"
         }
       },
-      "end": "}",
+      "end": "｝|}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.dict.end.pycn"
@@ -327,7 +327,7 @@
       },
       "patterns": [
         {
-          "match": ":",
+          "match": "：|:",
           "name": "punctuation.separator.dict.pycn"
         },
         {
@@ -378,7 +378,7 @@
               "name": "punctuation.separator.period.pycn"
             }
           },
-          "match": "([_[:alpha:]]\\w*)|(\\.)",
+          "match": "([_[:alpha:]]\\w*)|(。|\\.)",
           "name": "entity.name.function.decorator.pycn"
         },
         {
@@ -1862,7 +1862,7 @@
       "end": "(?=\\))(?!\\)\\s*\\()",
       "patterns": [
         {
-          "match": "(,)",
+          "match": "，|(,)",
           "name": "punctuation.separator.arguments.pycn"
         },
         {
@@ -1932,7 +1932,7 @@
       ]
     },
     "function-declaration": {
-      "begin": "\\s*(?:\\b(async)\\s+)?\\b(def)\\s+(?=[_[:alpha:]]\\p{word}*\\s*\\()",
+      "begin": "\\s*(?:\\b(异步的|async)\\s+)?\\b(定义|def)\\s+(?=[_[:alpha:]]\\p{word}*\\s*\\()",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.async.pycn"
@@ -2020,10 +2020,10 @@
           "name": "keyword.control.import.pycn"
         }
       },
-      "match": "\\b(?:(and|assert|async|await|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|in|is|(?<=\\.)lambda|lambda(?=\\s*[.=])|nonlocal|not|or|pass|raise|return|try|while|with|yield)|(as|import))\\b"
+      "match": "\\b(?:(和|and|断言|assert|异步的|async|等待|await|跳出|break|类|class|继续|continue|定义|def|删除|del|要不然|elif|否则|else|意外情况|except|最终|finally|迭代|for|从|from|全局的|global|如果|if|在|in|是|is|(?<=\\.)拉姆达|(?<=\\.)lambda|拉姆达(?=\\s*[.=])|lambda(?=\\s*[.=])|非局部|nonlocal|非|not|或|or|过|pass|举起|raise|返回|return|尝试|try|当|while|带上|with|产出|yield)|(作为|as|导入|import))\\b"
     },
     "illegal-object-name": {
-      "match": "\\b(True|False|None)\\b",
+      "match": "\\b(真|True|假|False|空|None)\\b",
       "name": "keyword.illegal.name.pycn"
     },
     "illegal-operator": {
@@ -2045,13 +2045,13 @@
     "import": {
       "patterns": [
         {
-          "begin": "\\b(?<!\\.)(from)\\b(?=.+import)",
+          "begin": "\\b(?<!\\.)(从|from)\\b(?=.+(导入|import))",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.import.pycn"
             }
           },
-          "end": "$|(?=import)",
+          "end": "$|(?=(导入|import))",
           "patterns": [
             {
               "match": "\\.+",
@@ -2063,7 +2063,7 @@
           ]
         },
         {
-          "begin": "\\b(?<!\\.)(import)\\b",
+          "begin": "\\b(?<!\\.)(导入|import)\\b",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.import.pycn"
@@ -2072,7 +2072,7 @@
           "end": "$",
           "patterns": [
             {
-              "match": "\\b(?<!\\.)as\\b",
+              "match": "\\b(?<!\\.)作为\\b|\\b(?<!\\.)as\\b",
               "name": "keyword.control.import.pycn"
             },
             {
@@ -2132,17 +2132,17 @@
       ]
     },
     "item-index": {
-      "begin": "(\\[)",
+      "begin": "［|(\\[)",
       "beginCaptures": {
-        "1": {
+        "2": {
           "name": "punctuation.definition.arguments.begin.pycn"
         }
       },
       "contentName": "meta.item-access.arguments.pycn",
-      "end": "(?=])",
+      "end": "(?=］|])",
       "patterns": [
         {
-          "match": ":",
+          "match": "：|:",
           "name": "punctuation.separator.slice.pycn"
         },
         {
@@ -2311,13 +2311,13 @@
       ]
     },
     "list": {
-      "begin": "\\[",
+      "begin": "［|\\[",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.list.begin.pycn"
         }
       },
-      "end": "]",
+      "end": "］|]",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.list.end.pycn"
@@ -2332,7 +2332,7 @@
     "literal": {
       "patterns": [
         {
-          "match": "\\b(True|False|None|NotImplemented|Ellipsis)\\b",
+          "match": "\\b(真|True|假|False|空|None|NotImplemented|Ellipsis)\\b",
           "name": "constant.language.pycn"
         },
         {
@@ -2572,7 +2572,7 @@
           "name": "keyword.operator.assignment.pycn"
         }
       },
-      "match": "\\b(?<!\\.)(?:(and|or|not|in|is)|(for|if|else|await|yield(?:\\s+from)?))(?!\\s*:)\\b|(<<|>>|[\\&^|~])|(\\*\\*|[-%*+]|//|[/@])|(!=|==|>=|<=|[<>])|(:=)"
+      "match": "\\b(?<!\\.)(?:(和|and|或|or|非|not|在|in|是|is)|(迭代|for|如果|if|否则|else|等待|await|产出|yield(?:\\s+from)?))(?!\\s*:)\\b|(左移|《《|<<|右移|》》|>>|按位与|＆|&|按位或|｜|\\||按位异或|＾|\\^|按位取反|～|~)|(取幂|＊＊|\\*\\*|乘|＊|\\*|加|＋|\\+|减|－|-|地板除|／／|//|除以|／|/|取余|取模|％|%)|(不等于|！＝|!=|等于|＝＝|==|大于等于|》＝|>=|小于等于|《＝|<=|大于|》|>|小于|《|<)|(:=)"
     },
     "parameter-special": {
       "captures": {
@@ -3651,23 +3651,23 @@
     "statement-keyword": {
       "patterns": [
         {
-          "match": "\\b((async\\s+)?\\s*def)\\b",
+          "match": "\\b((异步的\\s+|async\\s+)?\\s*(定义|def))\\b",
           "name": "storage.type.function.pycn"
         },
         {
-          "match": "\\b(?<!\\.)as\\b(?=.*[:\\\\])",
+          "match": "\\b(?<!\\.)作为\\b(?=.*[:\\\\])|\\b(?<!\\.)as\\b(?=.*[:\\\\])",
           "name": "keyword.control.flow.pycn"
         },
         {
-          "match": "\\b(?<!\\.)as\\b",
+          "match": "\\b(?<!\\.)作为\\b|\\b(?<!\\.)as\\b",
           "name": "keyword.control.import.pycn"
         },
         {
-          "match": "\\b(?<!\\.)(async|continue|del|assert|break|finally|for|from|elif|else|if|except|pass|raise|return|try|while|with)\\b",
+          "match": "\\b(?<!\\.)(异步的|async|继续|continue|删除|del|断言|assert|跳出|break|最终|finally|迭代|for|从|from|要不然|elif|否则|else|如果|if|意外情况|except|过|pass|举起|raise|返回|return|尝试|try|当|while|带上|with|匹配|match|情况|case)\\b",
           "name": "keyword.control.flow.pycn"
         },
         {
-          "match": "\\b(?<!\\.)(global|nonlocal)\\b",
+          "match": "\\b(?<!\\.)(全局的|global|非局部|nonlocal)\\b",
           "name": "storage.modifier.declaration.pycn"
         },
         {

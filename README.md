@@ -7,7 +7,7 @@
 
 # Description
 
-This is a VSCode syntax highlighting (and maybe with snippets later.) extension for [Pycn](https://github.com/Vincent-the-gamer/pycn)language.
+This is a VSCode syntax highlighting (and maybe with snippets later.) extension for [Pycn](https://github.com/Vincent-the-gamer/pycn) language.
 
 ## License
 
