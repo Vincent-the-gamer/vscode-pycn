@@ -1,6 +1,6 @@
 {
   "publisher": "vincent-the-gamer",
-  "name": "pycn",
+  "name": "vscode-pycn",
   "displayName": "Pycn",
   "version": "0.1.0",
   "private": true,
@@ -20,14 +20,14 @@
     "Programming Languages"
   ],
   "main": "./dist/index.js",
-  "icon": "res/icon.png",
+  "icon": "res/pycn-icon.png",
   "files": [
     "LICENSE.md",
     "dist/*",
     "res/*"
   ],
   "engines": {
-    "vscode": "^1.97.0"
+    "vscode": "^1.102.0"
   },
   "activationEvents": [
     "onStartupFinished"
@@ -42,7 +42,13 @@
     "languages": [
       {
         "id": "pycn",
-        "extensions": [".pycn"]
+        "icon": {
+          "light": "res/pycn-file-logo.png",
+          "dark": "res/pycn-file-logo.png"
+        },
+        "extensions": [
+          ".pycn"
+        ]
       }
     ],
     "grammars": [
@@ -56,7 +62,6 @@
   "scripts": {
     "build": "tsdown src/index.ts --external vscode",
     "dev": "nr build --watch --sourcemap",
-    "prepare": "nr update",
     "update": "vscode-ext-gen --output src/generated/meta.ts",
     "lint:fix": "eslint . --fix",
     "vscode:prepublish": "nr build",
@@ -64,28 +69,30 @@
     "pack": "vsce package --no-dependencies",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "release": "bumpp && nr publish"
+    "release": "nr publish",
+    "dep": "taze major -I"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.2.1",
-    "@antfu/ni": "^23.3.1",
-    "@types/node": "^22.13.4",
-    "@types/vscode": "^1.97.0",
+    "@antfu/eslint-config": "^5.0.0",
+    "@antfu/ni": "^25.0.0",
+    "@types/node": "^24.1.0",
+    "@types/vscode": "^1.102.0",
     "@vscode/vsce": "^3.2.2",
-    "bumpp": "^10.0.3",
-    "eslint": "^9.20.1",
+    "eslint": "^9.32.0",
     "esno": "^4.8.0",
-    "pnpm": "^10.4.1",
-    "reactive-vscode": "^0.2.10",
-    "tsdown": "^0.9.6",
-    "typescript": "^5.7.3",
-    "vite": "^6.1.0",
-    "vitest": "^3.0.5",
-    "vscode-ext-gen": "^1.0.0"
+    "pnpm": "^10.13.1",
+    "reactive-vscode": "^0.3.1",
+    "taze": "^19.1.0",
+    "tsdown": "^0.13.0",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.6",
+    "vitest": "^3.2.4",
+    "vscode-ext-gen": "^1.1.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "esbuild"
+      "esbuild",
+      "rolldown"
     ]
   }
 }
