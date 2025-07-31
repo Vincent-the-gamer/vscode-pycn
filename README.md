@@ -6,7 +6,7 @@
 
 <br/>
 
-<a href="https://marketplace.visualstudio.com/items?itemName=antfu.pycn" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/antfu.pycn.svg?color=eee&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=vincent-the-gamer.pycn" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/vincent-the-gamer.pycn.svg?color=eee&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
 
 ## Description
 
