@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "private": true,
   "packageManager": "pnpm@10.13.1",
-  "description": "",
+  "description": "Syntax highlighting for Pycn language.",
   "author": "Vincent-the-gamer",
   "license": "MIT",
   "homepage": "https://github.com/Vincent-the-gamer/vscode-pycn#readme",
@@ -24,7 +24,8 @@
   "files": [
     "LICENSE.md",
     "dist/*",
-    "res/*"
+    "res/*",
+    "syntaxes/*"
   ],
   "engines": {
     "vscode": "^1.102.0"
