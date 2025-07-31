@@ -20,7 +20,7 @@
     "Programming Languages"
   ],
   "main": "./dist/index.js",
-  "icon": "res/pycn-icon.png",
+  "icon": "res/pycn-logo.png",
   "files": [
     "LICENSE.md",
     "dist/*",
