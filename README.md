@@ -17,9 +17,6 @@ This is a VSCode syntax highlighting (and maybe with snippets in the future) ext
 
 ## Preview
 
-> [!NOTE]
-> This is a pre-alpha preview, it is not completely highlighted.
-
 ![preview](.github/preview.png)
 
 ## License
